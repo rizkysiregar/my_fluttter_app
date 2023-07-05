@@ -21,7 +21,26 @@ class HomeScreen extends StatelessWidget {
                 border: InputBorder.none),
           ),
         ),
-        actions: <Widget>[],
+        actions: <Widget>[
+          IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.mail_outline,
+                color: Colors.white,
+              )),
+          IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.notifications_none_outlined,
+                color: Colors.white,
+              )),
+          IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.shopping_cart_outlined,
+                color: Colors.white,
+              ))
+        ],
       ),
     );
   }
