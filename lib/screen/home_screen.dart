@@ -1,7 +1,10 @@
+import 'package:ecommerce_my_la/widgets/payment_status_home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,59 +45,12 @@ class HomeScreen extends StatelessWidget {
               ))
         ],
       ),
-      body: Column(
+      body: const Column(
         children: [
-          const SizedBox(
+          SizedBox(
             height: 25,
           ),
-          Card(
-            margin: const EdgeInsets.only(left: 16, right: 16),
-            elevation: 4,
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-            child: Container(
-              // container for payment status
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-
-              height: 65,
-              decoration: BoxDecoration(
-                  color: Colors.white, borderRadius: BorderRadius.circular(4)),
-              child: const Center(
-                child: Row(
-                  children: <Widget>[
-                    Icon(Icons.payments_rounded),
-                    SizedBox(width: 20),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[Text('Rp0'), Text('Saldo anda')],
-                    ),
-                    SizedBox(width: 75),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Icon(
-                          Icons.arrow_upward_rounded,
-                          color: Colors.lightBlue,
-                        ),
-                        Text('Top Up')
-                      ],
-                    ),
-                    SizedBox(width: 30),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Icon(
-                          Icons.history,
-                          color: Colors.lightBlue,
-                        ),
-                        Text('Top Up')
-                      ],
-                    )
-                  ],
-                ),
-              ),
-            ),
-          )
+          PaymentStatusHome()
         ],
       ),
     );
