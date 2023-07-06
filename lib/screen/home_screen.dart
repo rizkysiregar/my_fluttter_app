@@ -1,5 +1,7 @@
+import 'package:ecommerce_my_la/widgets/bottom_nav.dart';
 import 'package:ecommerce_my_la/widgets/list_menu_home.dart';
 import 'package:ecommerce_my_la/widgets/payment_status_home.dart';
+import 'package:ecommerce_my_la/widgets/slider_home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -48,7 +50,7 @@ class HomeScreen extends StatelessWidget {
         ),
         body: Center(
             child: Container(
-          margin: EdgeInsets.only(left: 16),
+          margin: EdgeInsets.only(left: 16, right: 16),
           child: const Column(
             children: [
               SizedBox(
@@ -59,8 +61,11 @@ class HomeScreen extends StatelessWidget {
                 height: 16,
               ),
               ListMenuHome(),
+              SizedBox(height: 16),
+              SliderHome()
             ],
           ),
-        )));
+        )),
+        bottomNavigationBar: const MyBottomNavigationItem());
   }
 }
