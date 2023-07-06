@@ -6,13 +6,12 @@ class PaymentStatusHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.only(left: 16, right: 16),
+      margin: const EdgeInsets.only(right: 16),
       elevation: 4,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       child: Container(
         // container for payment status
         padding: const EdgeInsets.symmetric(horizontal: 16),
-
         height: 65,
         decoration: BoxDecoration(
             color: Colors.white, borderRadius: BorderRadius.circular(4)),
@@ -20,12 +19,17 @@ class PaymentStatusHome extends StatelessWidget {
           child: Row(
             children: <Widget>[
               Icon(Icons.payments_rounded),
-              SizedBox(width: 20),
+              SizedBox(
+                width: 16,
+              ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[Text('Rp0'), Text('Saldo anda')],
               ),
-              SizedBox(width: 75),
+              Expanded(
+                  child: SizedBox(
+                width: 75,
+              )),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -36,7 +40,10 @@ class PaymentStatusHome extends StatelessWidget {
                   Text('Top Up')
                 ],
               ),
-              SizedBox(width: 30),
+              Expanded(
+                  child: SizedBox(
+                width: 20,
+              )),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
