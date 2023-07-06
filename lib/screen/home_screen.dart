@@ -1,6 +1,8 @@
 import 'package:ecommerce_my_la/widgets/bottom_nav.dart';
 import 'package:ecommerce_my_la/widgets/list_menu_home.dart';
 import 'package:ecommerce_my_la/widgets/payment_status_home.dart';
+import 'package:ecommerce_my_la/widgets/product_slider.dart';
+import 'package:ecommerce_my_la/widgets/product_slider_grid.dart';
 import 'package:ecommerce_my_la/widgets/slider_home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -48,24 +50,70 @@ class HomeScreen extends StatelessWidget {
                 ))
           ],
         ),
-        body: Center(
-            child: Container(
-          margin: EdgeInsets.only(left: 16, right: 16),
-          child: const Column(
-            children: [
-              SizedBox(
-                height: 25,
-              ),
-              PaymentStatusHome(),
-              SizedBox(
-                height: 16,
-              ),
-              ListMenuHome(),
-              SizedBox(height: 16),
-              SliderHome()
-            ],
-          ),
-        )),
+        body: SingleChildScrollView(
+          child: Center(
+              child: Container(
+            margin: EdgeInsets.only(left: 16, right: 16),
+            child: const Column(
+              children: [
+                SizedBox(
+                  height: 25,
+                ),
+                PaymentStatusHome(),
+                SizedBox(
+                  height: 16,
+                ),
+                ListMenuHome(),
+                SizedBox(height: 16),
+                SliderHome(),
+                SizedBox(height: 16),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Terlaris Hari Ini',
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      'Lihat Semua',
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.lightBlue,
+                          fontWeight: FontWeight.bold),
+                    )
+                  ],
+                ),
+                SizedBox(height: 16),
+                ProductSlider(),
+                SizedBox(height: 16),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Produk Terbaru',
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      'Lihat Semua',
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.lightBlue,
+                          fontWeight: FontWeight.bold),
+                    )
+                  ],
+                ),
+                SizedBox(height: 16),
+                ProductSliderGrid(),
+              ],
+            ),
+          )),
+        ),
         bottomNavigationBar: const MyBottomNavigationItem());
   }
 }
